@@ -24,18 +24,38 @@ angular.module('angularApp')
 
     this.products = [
       {
-        name: 'Product 1',
-        description: 'lorem ipsum dolor',
-        price: '2.95',
+        name: 'A Product 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        price: '2',
         canPurchase: true,
-        soldOut: false
+        soldOut: false,
+        images: [
+          {
+            full: 'http://placekitten.com/200',
+            thumb: 'http://placekitten.com/75'
+          },
+          {
+            full: 'http://placekitten.com/200',
+            thumb: 'http://placekitten.com/75'
+          }
+        ]
       },
       {
-        name: 'Product 2',
-        description: 'lorem ipsum dolor',
+        name: 'B Product 2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         price: '3.95',
         canPurchase: true,
-        soldOut: false
+        soldOut: false,
+        images: [
+          {
+            full: 'http://placekitten.com/200',
+            thumb: 'http://placekitten.com/75'
+          },
+          {
+            full: 'http://placekitten.com/200',
+            thumb: 'http://placekitten.com/75'
+          }
+        ]
       }
     ];
 
