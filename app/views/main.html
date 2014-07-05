@@ -2,28 +2,69 @@
   <div class="col-md-12">
 
     <ul class="list-group">
-      <li ng-repeat="product in store.products | orderBy: '-name'" class="list-group-item">
-        <div ng-hide="product.soldOut">
-          <h3>
-            {{ product.name }}
-            <span class="pull-right">{{ product.price | currency }}</span>
-          </h3>
-          <div class="media">
-            <div class="pull-left">
-              <img ng-src="{{ product.images[0].thumb }}" class="media-object">
-            </div>
-            <div class="media-body">
-              <p>
-                {{ product.description }}
-              </p>
-              <p class="pull-right">
-                <button class="btn btn-primary" ng-show="product.canPurchase">
-                  Add to Cart
-                </button>
-              </p>
-            </div>
+      <li ng-repeat="product in store.products | orderBy: '-name'" ng-hide="product.soldOut" class="list-group-item">
+        <h3>
+          {{ product.name }}
+          <span class="pull-right">{{ product.price | currency }}</span>
+        </h3>
+
+        <div class="media">
+          <div class="pull-left">
+            <img ng-src="{{ product.images[0].thumb }}" class="media-object">
+          </div>
+          <div class="media-body">
+            <p>
+              {{ product.description }}
+            </p>
+            <p class="pull-right">
+              <button class="btn btn-primary" ng-show="product.canPurchase">
+                Add to Cart
+              </button>
+            </p>
           </div>
         </div>
+
+        <section ng-controller="PanelController as panel">
+          <ul class="nav nav-tabs">
+            <li ng-class="{ active:panel.isSelected(1) }">
+              <a href ng-click="panel.selectTab(1)">Description</a>
+            </li>
+            <li ng-class="{ active:panel.isSelected(2) }">
+              <a href ng-click="panel.selectTab(2)">Specifications</a>
+            </li>
+            <li ng-class="{ active:panel.isSelected(3) }">
+              <a href ng-click="panel.selectTab(3)">Reviews</a>
+            </li>
+          </ul>
+
+          <div class="panel panel-default" ng-show="panel.isSelected(1)">
+            <div class="panel-heading">
+              <h5 class="panel-title">Description</h5>
+            </div>
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </div>
+          <div class="panel panel-default" ng-show="panel.isSelected(2)">
+            <div class="panel-heading">
+              <h5 class="panel-title">Specifications</h5>
+            </div>
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </div>
+          <div class="panel panel-default" ng-show="panel.isSelected(3)">
+            <div class="panel-heading">
+              <h5 class="panel-title">Reviews</h5>
+            </div>
+            <div class="panel-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+          </div>
+        </section>
       </li>
     </ul>
 

@@ -59,4 +59,18 @@ angular.module('angularApp')
       }
     ];
 
-});
+  });
+
+/* PanelController */
+angular.module('angularApp')
+  .controller('PanelController', function() {
+    this.tab = 1;
+
+    this.selectTab = function(setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSelected = function(checkTab) {
+      return this.tab === checkTab;
+    };
+  });
