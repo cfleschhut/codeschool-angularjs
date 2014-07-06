@@ -105,6 +105,7 @@ angular.module('angularApp')
     this.review = {};
 
     this.addReview = function(product) {
+      this.review.createdOn = new Date();
       product.reviews.push(this.review);
       this.review = {};
     };

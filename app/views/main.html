@@ -56,11 +56,11 @@
                   <b>{{review.stars}} Stars</b>
                   {{review.body}}
                 </p>
-                <footer><cite>by: {{review.author}}</cite></footer>
+                <footer><cite>by: {{review.author}} on {{review.createdOn | date}}</cite></footer>
               </blockquote>
               <hr>
 
-              <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+              <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
                 <h4>Preview:</h4>
                 <blockquote>
                   <p>
@@ -71,8 +71,8 @@
                 </blockquote>
 
                 <div class="form-group">
-                  <label>Rating:</label>
-                  <select class="form-control" ng-model="reviewCtrl.review.stars">
+                  <label class="control-label">Rating:</label>
+                  <select class="form-control" ng-model="reviewCtrl.review.stars" required>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -81,12 +81,12 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Review:</label>
-                  <textarea class="form-control" rows="3" ng-model="reviewCtrl.review.body" placeholder="Your rating…"></textarea>
+                  <label class="control-label">Review:</label>
+                  <textarea class="form-control" rows="3" ng-model="reviewCtrl.review.body" placeholder="Your rating…" required></textarea>
                 </div>
                 <div class="form-group">
-                  <label>Author:</label>
-                  <input type="email" class="form-control" placeholder="author@example.com" ng-model="reviewCtrl.review.author">
+                  <label class="control-label">Author:</label>
+                  <input type="email" class="form-control" placeholder="author@example.com" ng-model="reviewCtrl.review.author" required>
                 </div>
 
                 <input type="submit" value="Submit" class="btn btn-primary">
