@@ -38,6 +38,18 @@ angular.module('angularApp')
             full: 'http://placekitten.com/200',
             thumb: 'http://placekitten.com/75'
           }
+        ],
+        reviews: [
+          {
+            stars: 5,
+            body: 'review 1 content',
+            author: 'reviewer@example.com'
+          },
+          {
+            stars: 4,
+            body: 'review 2 content',
+            author: 'reviewer@example.com'
+          }
         ]
       },
       {
@@ -55,6 +67,18 @@ angular.module('angularApp')
             full: 'http://placekitten.com/200',
             thumb: 'http://placekitten.com/75'
           }
+        ],
+        reviews: [
+          {
+            stars: 5,
+            body: 'review 1 content',
+            author: 'reviewer@example.com'
+          },
+          {
+            stars: 4,
+            body: 'review 2 content',
+            author: 'reviewer@example.com'
+          }
         ]
       }
     ];
@@ -64,7 +88,7 @@ angular.module('angularApp')
 /* PanelController */
 angular.module('angularApp')
   .controller('PanelController', function() {
-    this.tab = 1;
+    this.tab = 3;
 
     this.selectTab = function(setTab) {
       this.tab = setTab;
@@ -72,5 +96,16 @@ angular.module('angularApp')
 
     this.isSelected = function(checkTab) {
       return this.tab === checkTab;
+    };
+  });
+
+/* ReviewController */
+angular.module('angularApp')
+  .controller('ReviewController', function() {
+    this.review = {};
+
+    this.addReview = function(product) {
+      product.reviews.push(this.review);
+      this.review = {};
     };
   });

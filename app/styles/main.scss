@@ -7,3 +7,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 body {
   padding-top: 70px;
 }
+
+.product-tabs .panel {
+  border-top: none;
+  border-radius: 0;
+}
