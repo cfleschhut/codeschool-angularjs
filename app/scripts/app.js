@@ -35,3 +35,13 @@ angular
         redirectTo: '/'
       });
   });
+
+
+/* custom directive */
+angular.module('angularApp')
+  .directive('productTitle', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/product-title.html'
+    };
+  });
