@@ -37,11 +37,19 @@ angular
   });
 
 
-/* custom directive */
+/* custom directives */
 angular.module('angularApp')
   .directive('productTitle', function() {
     return {
       restrict: 'E',
       templateUrl: 'views/product-title.html'
+    };
+  });
+
+angular.module('angularApp')
+  .directive('productDescription', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/product-description.html'
     };
   });
