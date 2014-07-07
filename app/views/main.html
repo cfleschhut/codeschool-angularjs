@@ -3,10 +3,7 @@
 
     <ul class="list-group">
       <li ng-repeat="product in store.products | orderBy: '-name'" ng-hide="product.soldOut" class="list-group-item">
-        <h3>
-          {{ product.name }}
-          <span class="pull-right">{{ product.price | currency }}</span>
-        </h3>
+        <h3 ng-include="'views/product-title.html'"></h3>
 
         <div class="media">
           <div class="pull-left">
