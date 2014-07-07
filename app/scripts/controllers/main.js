@@ -16,10 +16,9 @@ angular.module('angularApp')
       'Karma'
     ];
 
-  });
+  })
 
-/* StoreController */
-angular.module('angularApp')
+  /* StoreController */
   .controller('StoreController', function() {
 
     this.products = [
@@ -43,12 +42,14 @@ angular.module('angularApp')
           {
             stars: 5,
             body: 'review 1 content',
-            author: 'reviewer@example.com'
+            author: 'reviewer@example.com',
+            createdOn: 1404738261948
           },
           {
             stars: 4,
             body: 'review 2 content',
-            author: 'reviewer@example.com'
+            author: 'reviewer@example.com',
+            createdOn: 1304738261948
           }
         ]
       },
@@ -72,21 +73,22 @@ angular.module('angularApp')
           {
             stars: 5,
             body: 'review 1 content',
-            author: 'reviewer@example.com'
+            author: 'reviewer@example.com',
+            createdOn: 1204738261948
           },
           {
             stars: 4,
             body: 'review 2 content',
-            author: 'reviewer@example.com'
+            author: 'reviewer@example.com',
+            createdOn: 1104738261948
           }
         ]
       }
     ];
 
-  });
+  })
 
-/* ReviewController */
-angular.module('angularApp')
+  /* ReviewController */
   .controller('ReviewController', function() {
     this.review = {};
 
@@ -94,40 +96,5 @@ angular.module('angularApp')
       this.review.createdOn = new Date();
       product.reviews.push(this.review);
       this.review = {};
-    };
-  });
-
-/* custom directives */
-angular.module('angularApp')
-  .directive('productTitle', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/product-title.html'
-    };
-  })
-
-  .directive('productDescription', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/product-description.html'
-    };
-  })
-
-  .directive('productPanels', function() {
-    return {
-      restrict: 'E',
-      templateUrl: 'views/product-panels.html',
-      controller: function() {
-        this.tab = 3;
-
-        this.selectTab = function(setTab) {
-          this.tab = setTab;
-        };
-
-        this.isSelected = function(checkTab) {
-          return this.tab === checkTab;
-        };
-      },
-      controllerAs: 'panel'
     };
   });

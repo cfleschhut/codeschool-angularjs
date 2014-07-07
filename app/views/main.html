@@ -2,7 +2,7 @@
   <div class="col-md-12">
 
     <ul class="list-group">
-      <li ng-repeat="product in store.products | orderBy: '-name'" ng-hide="product.soldOut" class="list-group-item">
+      <li ng-repeat="product in store.products | orderBy: 'name'" ng-hide="product.soldOut" class="list-group-item">
         <product-title></product-title>
 
         <div class="media">
