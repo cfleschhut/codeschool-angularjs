@@ -19,74 +19,17 @@ angular.module('angularApp')
   })
 
   /* StoreController */
-  .controller('StoreController', function() {
+  .controller('StoreController', ['$http', function($http) {
 
-    this.products = [
-      {
-        name: 'A Product 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        price: '2',
-        canPurchase: true,
-        soldOut: false,
-        images: [
-          {
-            full: 'http://placekitten.com/200',
-            thumb: 'http://placekitten.com/75'
-          },
-          {
-            full: 'http://placekitten.com/200',
-            thumb: 'http://placekitten.com/75'
-          }
-        ],
-        reviews: [
-          {
-            stars: 5,
-            body: 'review 1 content',
-            author: 'reviewer@example.com',
-            createdOn: 1404738261948
-          },
-          {
-            stars: 4,
-            body: 'review 2 content',
-            author: 'reviewer@example.com',
-            createdOn: 1304738261948
-          }
-        ]
-      },
-      {
-        name: 'B Product 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        price: '3.95',
-        canPurchase: true,
-        soldOut: false,
-        images: [
-          {
-            full: 'http://placekitten.com/200',
-            thumb: 'http://placekitten.com/75'
-          },
-          {
-            full: 'http://placekitten.com/200',
-            thumb: 'http://placekitten.com/75'
-          }
-        ],
-        reviews: [
-          {
-            stars: 5,
-            body: 'review 1 content',
-            author: 'reviewer@example.com',
-            createdOn: 1204738261948
-          },
-          {
-            stars: 4,
-            body: 'review 2 content',
-            author: 'reviewer@example.com',
-            createdOn: 1104738261948
-          }
-        ]
-      }
-    ];
+    var store = this;
+    store.products = [];
 
-  })
+    $http.get('/products.json')
+      .success(function(data) {
+        store.products = data;
+      });
+
+  }])
 
   /* ReviewController */
   .controller('ReviewController', function() {

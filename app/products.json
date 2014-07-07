@@ -1,0 +1,64 @@
+[
+    {
+        "canPurchase": true,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "images": [
+            {
+                "full": "http://placekitten.com/200",
+                "thumb": "http://placekitten.com/75"
+            },
+            {
+                "full": "http://placekitten.com/200",
+                "thumb": "http://placekitten.com/75"
+            }
+        ],
+        "name": "A Product 1",
+        "price": "2",
+        "reviews": [
+            {
+                "author": "reviewer@example.com",
+                "body": "review 1 content",
+                "createdOn": 1404738261948,
+                "stars": 5
+            },
+            {
+                "author": "reviewer@example.com",
+                "body": "review 2 content",
+                "createdOn": 1304738261948,
+                "stars": 4
+            }
+        ],
+        "soldOut": false
+    },
+    {
+        "canPurchase": true,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "images": [
+            {
+                "full": "http://placekitten.com/200",
+                "thumb": "http://placekitten.com/75"
+            },
+            {
+                "full": "http://placekitten.com/200",
+                "thumb": "http://placekitten.com/75"
+            }
+        ],
+        "name": "B Product 2",
+        "price": "3.95",
+        "reviews": [
+            {
+                "author": "reviewer@example.com",
+                "body": "review 1 content",
+                "createdOn": 1204738261948,
+                "stars": 5
+            },
+            {
+                "author": "reviewer@example.com",
+                "body": "review 2 content",
+                "createdOn": 1104738261948,
+                "stars": 4
+            }
+        ],
+        "soldOut": false
+    }
+]
