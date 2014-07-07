@@ -85,20 +85,6 @@ angular.module('angularApp')
 
   });
 
-/* PanelController */
-angular.module('angularApp')
-  .controller('PanelController', function() {
-    this.tab = 3;
-
-    this.selectTab = function(setTab) {
-      this.tab = setTab;
-    };
-
-    this.isSelected = function(checkTab) {
-      return this.tab === checkTab;
-    };
-  });
-
 /* ReviewController */
 angular.module('angularApp')
   .controller('ReviewController', function() {
@@ -108,5 +94,40 @@ angular.module('angularApp')
       this.review.createdOn = new Date();
       product.reviews.push(this.review);
       this.review = {};
+    };
+  });
+
+/* custom directives */
+angular.module('angularApp')
+  .directive('productTitle', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/product-title.html'
+    };
+  })
+
+  .directive('productDescription', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/product-description.html'
+    };
+  })
+
+  .directive('productPanels', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/product-panels.html',
+      controller: function() {
+        this.tab = 3;
+
+        this.selectTab = function(setTab) {
+          this.tab = setTab;
+        };
+
+        this.isSelected = function(checkTab) {
+          return this.tab === checkTab;
+        };
+      },
+      controllerAs: 'panel'
     };
   });

@@ -21,71 +21,7 @@
           </div>
         </div>
 
-        <section class="product-tabs" ng-controller="PanelController as panel">
-          <ul class="nav nav-tabs">
-            <li ng-class="{ active:panel.isSelected(1) }">
-              <a href ng-click="panel.selectTab(1)">Description</a>
-            </li>
-            <li ng-class="{ active:panel.isSelected(2) }">
-              <a href ng-click="panel.selectTab(2)">Specifications</a>
-            </li>
-            <li ng-class="{ active:panel.isSelected(3) }">
-              <a href ng-click="panel.selectTab(3)">Reviews</a>
-            </li>
-          </ul>
-
-          <product-description></product-description>
-          <div class="panel panel-default" ng-show="panel.isSelected(2)">
-            <div class="panel-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </div>
-          </div>
-          <div class="panel panel-default" ng-show="panel.isSelected(3)">
-            <div class="panel-body">
-              <blockquote ng-repeat="review in product.reviews">
-                <p>
-                  <b>{{review.stars}} Stars</b>
-                  {{review.body}}
-                </p>
-                <footer><cite>by: {{review.author}} on {{review.createdOn | date}}</cite></footer>
-              </blockquote>
-              <hr>
-
-              <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-                <h4>Preview:</h4>
-                <blockquote>
-                  <p>
-                    <b>{{reviewCtrl.review.stars}} Stars</b>
-                    {{reviewCtrl.review.body}}
-                  </p>
-                  <footer><cite>by: {{reviewCtrl.review.author}}</cite></footer>
-                </blockquote>
-
-                <div class="form-group">
-                  <label class="control-label">Rating:</label>
-                  <select class="form-control" ng-model="reviewCtrl.review.stars" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">Review:</label>
-                  <textarea class="form-control" rows="3" ng-model="reviewCtrl.review.body" placeholder="Your rating…" required></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">Author:</label>
-                  <input type="email" class="form-control" placeholder="author@example.com" ng-model="reviewCtrl.review.author" required>
-                </div>
-
-                <input type="submit" value="Submit" class="btn btn-primary">
-              </form>
-            </div>
-          </div>
-        </section>
+        <product-panels></product-panels>
       </li>
     </ul>
 
